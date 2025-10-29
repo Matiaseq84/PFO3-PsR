@@ -15,12 +15,12 @@ def process_task(payload):
     """Función que ejecuta la tarea"""
     task_id = payload.get('task_id')
     action = payload.get('action')
-    # ejemplo: sleep
+    # sleep
     if action == 'sleep':
         secs = float(payload.get('secs', 1))
         time.sleep(secs)
         return {'task_id': task_id, 'status':'ok', 'result': f'slept {secs}s'}
-    # ejemplo: compute factorial (pequeño)
+    # compute factorial 
     if action == 'fact':
         n = int(payload.get('n', 1))
         res = 1
